@@ -18,13 +18,13 @@ case $numero in
 	1) shutdown now
         sleep 5
 	break;;
-	2) read "Cuando?" min
+	2) read -ṕ "Cuando?" min
 	shutdown +$min
 	break;;
 	3)shutdown -r now
         sleep 5
 	break;;
-	4)read "Cuando?" min
+	4)read -p "Cuando?" min
 	shutdown -r  +$min
 	break;;
 	5) shutdown -c
