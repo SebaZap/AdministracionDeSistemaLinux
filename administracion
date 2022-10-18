@@ -1,0 +1,36 @@
+#!/bin/bash
+
+function pantalla(){
+echo "Administración"
+echo "1- Apagar"
+echo "2- Apagar en X Minutos"
+echo "3- Reiniciar"
+echo "4- Reiniciar en x Minutos"
+echo "5- Cancelar"
+echo "6- Salir"
+}
+while true;
+do
+clear
+pantalla
+read -p "Elige un numero" numero
+case $numero in
+	1) shutdown now
+        sleep 5
+	break;;
+	2) read "Cuando?" min
+	shutdown +$min
+	break;;
+	3)shutdown -r now
+        sleep 5
+	break;;
+	4)read "Cuando?" min
+	shutdown -r  +$min
+	break;;
+	5) shutdown -c
+	break;;
+	6) echo "adiós"
+	break;;
+	*) echo "Opcion no válida"
+esac
+done
